@@ -1,0 +1,41 @@
+
+.blogContent {
+    max-width: 1240px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.details {
+    width: 100%;
+}
+.blog-img img{
+    width: 800px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 4px;
+}
+.blog-title{
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    color: black;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.user-icon{
+    align-items: center;
+    margin-right: 8px;
+}
+.author-date{
+    display: inline-flex;
+    margin-bottom: 12px;
+    color: #4B5563;
+    align-items: center;
+}
+.mainContent{
+    font-size: 18px;
+    color: black;
+    margin-bottom: 24px;
+    text-align: justify;
+}
