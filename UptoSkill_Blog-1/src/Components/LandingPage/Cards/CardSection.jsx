@@ -1,5 +1,6 @@
 import React from 'react';
 import './CardSection.css';
+import { useNavigate } from 'react-router-dom';
 
 import card1 from '../../../assets/Cards/card1.jpeg';
 import card2 from '../../../assets/Cards/card2.jpeg';
@@ -36,6 +37,7 @@ const cards = [
 ];
 
 function CardSection() {
+  const navigate= useNavigate();
   return (
     <section className="card-section">
       <h2 className="section-title">Latest Reads</h2>
@@ -46,7 +48,7 @@ function CardSection() {
             <div className="card-description">
               {card.description}
             </div>
-            <button className="read-more-button">Read More</button>
+            <button className="read-more-button" onClick={()=>navigate("/BlogPage")}>Read More</button>
           </div>
         ))}
       </div>

@@ -4,9 +4,6 @@ import card2 from '../../../assets/Cards/card2.jpeg';
 
 const BlogContent = () => {
   return (
-
-
-
 <div className='blogContent'>
     <div className='details'>
         <div className='blog-img'>
@@ -26,9 +23,6 @@ const BlogContent = () => {
         </div>
     </div>
 </div>
-
-
-
 
   )
 }
