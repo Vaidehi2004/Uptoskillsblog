@@ -1,13 +1,15 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './Header.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./Header.css";
 
-import Logo from '../../../assets/Logo.png';
+import Logo from "../../../assets/Logo.png";
 
 function Header() {
   return (
     <header className="header">
-      <div className="logo"> <img src={Logo} alt="logo" /></div>
+      <Link to="/" className="logo">
+        <img src={Logo} alt="logo" />
+      </Link>
       <div className="search-bar">
         <input type="text" placeholder="Search..." />
         <span className="search-icon">
@@ -19,7 +21,6 @@ function Header() {
         <Link to="/events">Events</Link>
         <Link to="/contact">Practice</Link>
         <Link to="/community">Blogs</Link>
-        
       </nav>
     </header>
   );
