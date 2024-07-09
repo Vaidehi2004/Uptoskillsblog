@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './CreateBlog.css';
-import JoditEditor from 'jodit-react';
+import React, { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./CreateBlog.css";
+import JoditEditor from "jodit-react";
 
 function CreateBlog() {
-  const [title, setTitle] = useState('');
-  const [content, setContent] = useState('');
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
   const [image, setImage] = useState(null);
-  const [aiTitle, setAiTitle] = useState('');
-  const [aiContent, setAiContent] = useState('');
+  const [aiTitle, setAiTitle] = useState("");
+  const [aiContent, setAiContent] = useState("");
 
   const handleTitleChange = (event) => {
     setTitle(event.target.value);
@@ -26,15 +26,15 @@ function CreateBlog() {
     event.preventDefault();
     setContent(content);
     // Handle form submission logic here
-    console.log('Title:', title);
-    console.log('Content:', content);
-    console.log('Image:', image);
+    console.log("Title:", title);
+    console.log("Content:", content);
+    console.log("Image:", image);
   };
 
-  const handleGenerateAiPost = () => {
+  const handleGenerateAiPost = (e) => {
     // TO DO: implement AI post generation logic here
-    setAiTitle('AI Generated Title');
-    setAiContent('AI Generated Content');
+    setAiTitle(e);
+    // setAiContent("AI Generated Content");
   };
 
   return (
@@ -42,25 +42,27 @@ function CreateBlog() {
       <div className="row">
         <div className="col-lg-6">
           <div className="mt-5 p-4 bg-light rounded shadow">
-          <div className="title-bar">
-          <h5>Write your blog</h5>
-          </div>
+            <div className="title-bar">
+              <h5>Write your blog</h5>
+            </div>
             <form onSubmit={handleSubmit}>
-              
               <div className="form-group mb-3">
-                
-                <label htmlFor="title" className="form-label">Title</label>
+                <label htmlFor="title" className="form-label">
+                  Title
+                </label>
                 <input
                   type="text"
                   className="form-control"
                   id="title"
                   value={title}
                   onChange={handleTitleChange}
-                  style={{ height: '40px', fontSize: '18px' }}
+                  style={{ height: "40px", fontSize: "18px" }}
                 />
               </div>
               <div className="form-group mb-3 contentt">
-                <label htmlFor="content" className="form-label">Content</label>
+                <label htmlFor="content" className="form-label">
+                  Content
+                </label>
                 <JoditEditor
                   value={content}
                   // onChange={handleContentChange}
@@ -70,37 +72,37 @@ function CreateBlog() {
                       insertImageAsBase64URI: true,
                     },
                     toolbar: [
-                      'source',
-                      '|',
-                      'bold',
-                      'italic',
-                      'underline',
-                      'strikethrough',
-                      '|',
-                      'superscript',
-                      'subscript',
-                      '|',
-                      'ul',
-                      'ol',
-                      '|',
-                      'outdent',
-                      'indent',
-                      '|',
-                      'font',
-                      'fontsize',
-                      '|',
-                      'text',
-                      'color',
-                      '|',
-                      'align',
-                      '|',
-                      'image',
-                      '|',
-                      'link',
-                      'unlink',
-                      '|',
-                      'undo',
-                      'redo',
+                      "source",
+                      "|",
+                      "bold",
+                      "italic",
+                      "underline",
+                      "strikethrough",
+                      "|",
+                      "superscript",
+                      "subscript",
+                      "|",
+                      "ul",
+                      "ol",
+                      "|",
+                      "outdent",
+                      "indent",
+                      "|",
+                      "font",
+                      "fontsize",
+                      "|",
+                      "text",
+                      "color",
+                      "|",
+                      "align",
+                      "|",
+                      "image",
+                      "|",
+                      "link",
+                      "unlink",
+                      "|",
+                      "undo",
+                      "redo",
                     ],
                   }}
                   className="large-editor"
@@ -128,32 +130,32 @@ function CreateBlog() {
           <div className="mt-5 p-4 bg-light rounded shadow">
             <div className="title-bar">
               <h5>AI Generated Post</h5>
-              
             </div>
             <div className="form-group mb-3">
-              <label htmlFor="ai-title" className="form-label">AI Title</label>
+              <label htmlFor="ai-title" className="form-label">
+                AI Title
+              </label>
               <input
                 type="text"
                 className="form-control"
                 id="ai-title"
+                onChange={() => handleGenerateAiPost(event.target.value)}
                 value={aiTitle}
-                readOnly
-                style={{ height: '40px', fontSize: '18px' }}
+                style={{ height: "40px", fontSize: "18px" }}
               />
             </div>
-            <button className="btn btn-primary" onClick={handleGenerateAiPost}>
-                Generate AI Post
-              </button>
+            <button className="btn btn-primary">Generate AI Post</button>
             <div className="form-group mb-3">
-              <label htmlFor="ai-content" className="form-label">AI Content</label>
+              <label htmlFor="ai-content" className="form-label">
+                AI Content
+              </label>
               <textarea
                 className="form-control"
                 id="ai-content"
                 value={aiContent}
                 readOnly
-                style={{ height: '600px', fontSize: '18px' }}
+                style={{ height: "600px", fontSize: "18px" }}
               />
-              
             </div>
           </div>
         </div>
